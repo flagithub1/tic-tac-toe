@@ -1,1 +1,32 @@
 @import '~bootstrap/scss/bootstrap';
+
+.game-cell {
+  //   border: 2px solid black;
+  //   min-height: 100px;
+  //   min-width: 10px;
+  text-align: center;
+}
+
+#restart-game {
+  text-align: center;
+}
+// .game-cell{
+// border-right: 0;
+// border-top: 0;
+// }
+#game-board {
+height: 70vmin;
+margin: auto;
+width: 70vmin;
+}
+
+.col-4 {
+border: 1px solid;
+align-items: center;
+border-right: 1px;
+border-top: 0;
+display: flex;
+font-size: 2vmin;
+justify-content: center;
+height: calc(100% / 3);
+}
