@@ -41,8 +41,6 @@ const restartGame = function (event) {
   console.log('next round')
 }
 
-$(event.target).text(currentPlayer)
-
 const addHandlers = function () {
   $('#0').on('click', playTurn)
   $('#1').on('click', playTurn)
