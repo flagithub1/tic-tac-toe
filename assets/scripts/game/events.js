@@ -2,22 +2,31 @@
 
 // const players = ['X','O']
 const gameBoard = ['', '', '', '', '', '', '', '', '']
-let currentPlayer = 'X'
+let currentPlayer = 'O'
+const switchPlayer = function () {
+  if (currentPlayer === 'O') {
+    currentPlayer = 'X'
+  } else {
+    currentPlayer = 'O'
+  }
+}
 // const validSpace = []  // unoccupied spaces
 
 const playTurn = function (event) {
   console.log(currentPlayer)
-  if (currentPlayer === 'X') {
-    currentPlayer = 'O'
-  } else {
-    currentPlayer = 'X'
+
+  if (!this.innerHTML) {
+    this.innerHTML = currentPlayer
+    const input = this.id
+    gameBoard[input] = this.innerHTML
+    checkWinner()
+    switchPlayer()
   }
-  $(event.target).text(currentPlayer)
-  checkWinner()
 }
+//  $(event.target).text(currentPlayer)
 
 const checkWinner = function () {
-  if (gameBoard[0] === gameBoard[1] && gameBoard[0] === gameBoard[2] && gameBoard[0] !== '') {
+  if (gameBoard[0] !== '' && gameBoard[0] === gameBoard[1] && gameBoard[0] === gameBoard[2]) {
     console.log('winner')
   } else if (gameBoard[3] === gameBoard[4] && gameBoard[3] === gameBoard[5] && gameBoard[3] !== '') {
     console.log('winner')
@@ -38,9 +47,11 @@ const checkWinner = function () {
   }
 }
 const restartGame = function (event) {
-  console.log('next round')
-}
+//  if (gameBoard !== '' && gameBoard === winner || gameBoard === draw) {}
+//  console.log('next game')
 
+  $(event.target).text(restartGame)
+}
 const addHandlers = function () {
   $('#0').on('click', playTurn)
   $('#1').on('click', playTurn)
