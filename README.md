@@ -48,7 +48,7 @@ i should be able to sign-out after playing the game
 
 ### Unsolved Problems
 
-- Still need to determine when 'X' or 'O'  wins or draw (checkWinner), alternate turn
+- Still need to determine when 'X' or 'O  wins or draw (checkWinner), alternate turn
    (playerXTurn,playerOTurn)
 - define occupiedCell,wrongMove. Make move in only emptyCell,when clicking on occupiedCell it should display(alert) wrongMove ,show how many games played,(gameCount)
 - still need to add functionality to the  buttons (clearBoard,startGame)
@@ -57,5 +57,4 @@ i should be able to sign-out after playing the game
 ## Images
 
 https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/p720x720/81772604_850181638765808_5067977425489494016_o.jpg?_nc_cat=107&_nc_ohc=ibtHA2vIp1QAX_wBBMs&_nc_ht=scontent-lga3-1.xx&_nc_tp=1&oh=b6621858ae72a6a33172fb00dc089a21&oe=5E8DE1F7
-
 #### Wireframe:

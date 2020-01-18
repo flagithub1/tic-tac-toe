@@ -6,7 +6,16 @@ const indexGame = function (response) {
   console.log(response)
 }
 
-const playTurn = function (response) {
+const playTurn = function(response) {
   $('.game-cell').click('playTurn!')
   console.log(response)
+}
+const startGame = function (response) {
+  $('#start-game').click('startGame')
+  console.log(response)
+}
+module.exports {
+  indexGame,
+  playTurn,
+  startGame
 }

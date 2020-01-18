@@ -11,8 +11,9 @@ const gameEvents = require('./game/events')
 $(() => {
   $('#change-password').hide()
   $('#sign-out').hide()
-  // $('#game-board').hide()
-  // $('#play').hide()
+  $('#game-board').hide()
+  $('#start-game').hide()
+  $('#restart-game').hide()
 
   // your JS code goes here
   authEvents.addHandlers()

@@ -3,6 +3,7 @@ const store = require('./../store')
 
 const signUpSuccess = function (response) {
   $('#message').text('successfully signed up!')
+  $('#start-game').hide()
   console.log(response)
 }
 
@@ -18,6 +19,8 @@ const signInSuccess = function (response) {
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#game-board').show()
+  $('#start-game').show()
+  $('#restart-game').show()
   console.log('sign in success', response)
 }
 const signInFailure = function (error) {
@@ -40,7 +43,9 @@ const signOutSuccess = function (response) {
   $('#sign-out').hide()
   $('#sign-up').show()
   $('#sign-in').show()
-  $('#game-board').hide()
+  $('#game-board').show()
+  $('#start-game').show()
+  $('#restart-game').show()
   console.log(response)
 }
 const signOutFailure = function (error) {
