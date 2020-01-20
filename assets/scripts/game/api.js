@@ -12,9 +12,9 @@ const indexGame = function (data) {
     data: data
   })
 }
-const showGame = function (data) {
+const readGame = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/showGame',
+    url: config.apiUrl + '/readGame',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -46,6 +46,6 @@ const updateGame = function (data) {
 module.exports = {
   indexGame,
   createGame,
-  showGame,
+  readGame,
   updateGame
 }

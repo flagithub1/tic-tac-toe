@@ -1,9 +1,10 @@
 'use strict'
-
-// const players = ['X','O']
+// let players =["X", "O"]
+// let player1
+// let player2
 let gameBoard = ['', '', '', '', '', '', '', '', '']
 let currentPlayer = 'X'
-const switchPlayer = function () {
+const nextTurn = function () {
   if (currentPlayer === 'X') {
     currentPlayer = 'O'
   } else {
@@ -19,14 +20,14 @@ const playTurn = function (event) {
     const input = this.id
     gameBoard[input] = this.innerHTML
     checkWinner()
-    switchPlayer()
+    nextTurn()
   }
+  $(event.target).text(currentPlayer)
 }
-//  $(event.target).text(currentPlayer)
 
 const checkWinner = function () {
   if (gameBoard[0] !== '' && gameBoard[0] === gameBoard[1] && gameBoard[0] === gameBoard[2]) {
-    console.log('winner')
+    console.log('')
     $('#message').text('WINNER')
   } else if (gameBoard[3] === gameBoard[4] && gameBoard[3] === gameBoard[5] && gameBoard[3] !== '') {
     console.log('winner')
@@ -45,17 +46,22 @@ const checkWinner = function () {
     $('#message').text('WINNER')
   } else if (gameBoard[0] === gameBoard[4] && gameBoard[0] === gameBoard[8] && gameBoard[0] !== '') {
     console.log('winner')
+    $('#message').text('WINNER')
+  } else if (gameBoard[2] === gameBoard[4] && gameBoard[2] === gameBoard[6] && gameBoard[2] !== '') {
+    console.log('winner')
+    $('#message').text('WINNER')
   }
 }
-const startGame = function (event) {
-  event.preventDefault()
-  console.log('next game')
+// const startGame = function (event) {
+//   event.preventDefault()
+//   console.log('')
+//
+//   $(event.target).text(startGame)
+// }
 
-  $(event.target).text(startGame)
-}
 const restartGame = function (event) {
   event.preventDefault()
-  $('.col-4').text('')
+  $('.col-4').text()
   gameBoard = ['', '', '', '', '', '', '', '', '']
 }
 
@@ -69,7 +75,7 @@ const addHandlers = function () {
   $('#6').on('click', playTurn)
   $('#7').on('click', playTurn)
   $('#8').on('click', playTurn)
-  $('#start-game').on('click', startGame)
+  //  $('#start-game').on('click', startGame)
   $('#restart-game').on('click', restartGame)
 }
 
